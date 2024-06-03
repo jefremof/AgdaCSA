@@ -88,11 +88,6 @@ runtest n testname (testpath , translator , machine , loglevel , overwrite) = do
   expected-content ← readFiniteFile expectedfile
   let program-output = output ++ separator ++ output′
 
-  putStrLn program-output
-  putStrLn separator
-  putStrLn expected-content
-  putStrLn separator
-
   ignore (writeFile tempfile program-output)
 
   when overwrite (ignore (writeFile expectedfile program-output))
