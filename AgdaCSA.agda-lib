@@ -1,0 +1,3 @@
+name: AgdaCSA
+depend: standard-library
+include: src
