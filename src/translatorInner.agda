@@ -107,14 +107,14 @@ translate1 text = do
   pure terms
 
 showEncoded : ∀ {n opcode optype} → String → Operation n opcode optype → String
-showEncoded t (jmp x) = "{\"ocpode\": \"jmp\", \"arg\": " ++ (Fin.show x) ++ ", \"term\": " ++ t ++ "},"
-showEncoded t (jz x)  = "{\"ocpode\": \"jz\", \"arg\": " ++ (Fin.show x) ++ ", \"term\": " ++ t ++ "},"
-showEncoded t right   = "{\"ocpode\": \"right\", \"term\": " ++ t ++ "},"
-showEncoded t left    = "{\"ocpode\": \"left\", \"term\": " ++ t ++ "},"
-showEncoded t dec     = "{\"ocpode\": \"decrement\", \"term\": " ++ t ++ "},"
-showEncoded t inc     = "{\"ocpode\": \"increment\", \"term\": " ++ t ++ "},"
-showEncoded t input   = "{\"ocpode\": \"input\", \"term\": " ++ t ++ "},"
-showEncoded t print   = "{\"ocpode\": \"print\", \"term\": " ++ t ++ "},"
+showEncoded t (jmp x) = "{\"opode\": \"jmp\", \"arg\": " ++ (Fin.show x) ++ ", \"term\": " ++ t ++ "},"
+showEncoded t (jz x)  = "{\"opode\": \"jz\", \"arg\": " ++ (Fin.show x) ++ ", \"term\": " ++ t ++ "},"
+showEncoded t right   = "{\"opode\": \"right\", \"term\": " ++ t ++ "},"
+showEncoded t left    = "{\"opode\": \"left\", \"term\": " ++ t ++ "},"
+showEncoded t dec     = "{\"opode\": \"decrement\", \"term\": " ++ t ++ "},"
+showEncoded t inc     = "{\"opode\": \"increment\", \"term\": " ++ t ++ "},"
+showEncoded t input   = "{\"opode\": \"input\", \"term\": " ++ t ++ "},"
+showEncoded t print   = "{\"opode\": \"print\", \"term\": " ++ t ++ "},"
 showEncoded t hlt     = "{\"opcode\": \"halt\"}]"
 
 encodeInstruction : ∀ {n} → Instr n → String
