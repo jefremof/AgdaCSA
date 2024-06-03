@@ -21,4 +21,7 @@ jobs:
           agda --compile-dir=build/ -c src/translatorMain.agda
         working-directory: .
 
+      - run: ./build/goldentest ./tests/ ./build/translatorMain ./build/machineMain
+        working-directory: .
+
 
