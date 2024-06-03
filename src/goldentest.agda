@@ -62,10 +62,10 @@ separator = "============================================================\n"
 
 runtest : ℕ → String → Options → IO Bool
 runtest n testname (testpath , translator , machine , loglevel , overwrite) = do
-  let codesource     = testpath ++ testname ++ "\\source.txt"
-      inputfile      = testpath ++ testname ++ "\\input.txt"
-      expectedfile   = testpath ++ testname ++ "\\expected.txt"
-      tempfile       = testpath ++ testname ++ "\\temp.txt"
+  let codesource     = testpath ++ testname ++ "/source.txt"
+      inputfile      = testpath ++ testname ++ "/input.txt"
+      expectedfile   = testpath ++ testname ++ "/expected.txt"
+      tempfile       = testpath ++ testname ++ "/temp.txt"
       translatorargs = (codesource ∷ tempfile ∷ [])
       machineargs    = (tempfile ∷ inputfile ∷ (showLevel loglevel) ∷ [])
 
