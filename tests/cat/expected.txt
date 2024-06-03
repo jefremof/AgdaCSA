@@ -1,4 +1,4 @@
-[{"ocpode": "input", "term": [0,0,',']},{"ocpode": "jz", "arg": 5, "term": [0,1,'[']},{"ocpode": "print", "term": [0,2,'.']},{"ocpode": "input", "term": [0,3,',']},{"ocpode": "jmp", "arg": 1, "term": [0,4,']']},{"opcode": "halt"}]
+[{"opcode": "input", "term": [0,0,',']},{"opcode": "jz", "arg": 5, "term": [0,1,'[']},{"opcode": "print", "term": [0,2,'.']},{"opcode": "input", "term": [0,3,',']},{"opcode": "jmp", "arg": 1, "term": [0,4,']']},{"opcode": "halt"}]
 ============================================================
 DEBUG   input: 'f'
 DEBUG   TICK:   2  PC:    1  ADDR:    0  MEM_OUT:  102  ACC:  0  	 jz  [0,1,'[']
