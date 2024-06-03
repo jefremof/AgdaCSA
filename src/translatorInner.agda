@@ -115,7 +115,7 @@ showEncoded t dec     = "{\"opcode\": \"decrement\", \"term\": " ++ t ++ "},"
 showEncoded t inc     = "{\"opcode\": \"increment\", \"term\": " ++ t ++ "},"
 showEncoded t input   = "{\"opcode\": \"input\", \"term\": " ++ t ++ "},"
 showEncoded t print   = "{\"opcode\": \"print\", \"term\": " ++ t ++ "},"
-showEncoded t hlt     = "{\"opccode\": \"halt\"}]"
+showEncoded t hlt     = "{\"opcode\": \"halt\"}]"
 
 encodeInstruction : ∀ {n} → Instr n → String
 encodeInstruction instr = showEncoded (Instr.term instr) (Instr.operation instr) 
