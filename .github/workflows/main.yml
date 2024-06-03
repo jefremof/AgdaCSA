@@ -1,0 +1,25 @@
+name: basic
+on:
+  push:
+    branches: ['main']
+jobs:
+  check:
+    name: Check hello-world-dep.agda
+    runs-on: ubuntu-latest # or macOS-latest, or windows-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: wenkokke/setup-agda@v2
+        with:
+          agda-version: '2.6.4.3'
+          agda-stdlib-version: '2.0'
+
+      # Check hello-world-dep.agda, which you can find in tests/agda-stdlib:
+      - run: -|
+          agda --compile-dir=build/ -c src/goldentest.agda
+          agda --compile-dir=build/ -c src/machineMain.agda
+          agda --compile-dir=build/ -c src/translatorMain.agda
+        working-directory: .
+
+      - run: ./build/goldentest ../tests/ ./translatorMain ./machineMain
+        working-directory: .
