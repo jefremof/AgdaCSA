@@ -25,7 +25,7 @@ open import Level using (0ℓ)
 open import Logging using (log ; debug ; info ; warning)
 
 open import isa
-open import machineInner using (Fin-zero-init ; pri)
+open import machineInner using (Fin-zero-init)
 
 _inRegularSymbols : Char → Bool
 '<' inRegularSymbols = true
@@ -137,6 +137,8 @@ translate2 terms path = do
 
   (just code) ← pure (selectExisting  maybe-code)
     where nothing → (die "Invalid program code")
+
+
 
   let json = (foldr′ foldInstruction "[" code)
   putStrLn json
