@@ -15,7 +15,7 @@ jobs:
           agda-stdlib-version: '2.0'
 
       # Check hello-world-dep.agda, which you can find in tests/agda-stdlib:
-      - run: -|
+      - run: |
           agda --compile-dir=build/ -c src/goldentest.agda
           agda --compile-dir=build/ -c src/machineMain.agda
           agda --compile-dir=build/ -c src/translatorMain.agda
