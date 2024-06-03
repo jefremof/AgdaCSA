@@ -1,0 +1,21 @@
+[{"ocpode": "input", "term": [0,0,',']},{"ocpode": "jz", "arg": 5, "term": [0,1,'[']},{"ocpode": "print", "term": [0,2,'.']},{"ocpode": "input", "term": [0,3,',']},{"ocpode": "jmp", "arg": 1, "term": [0,4,']']},{"opcode": "halt"}]
+============================================================
+DEBUG   input: 'f'
+DEBUG   TICK:   2  PC:    1  ADDR:    0  MEM_OUT:  102  ACC:  0  	 jz  [0,1,'[']
+DEBUG   TICK:   4  PC:    2  ADDR:    0  MEM_OUT:  102  ACC:  102  	 print  [0,2,'.']
+DEBUG   output: '' << 'f'
+DEBUG   TICK:   6  PC:    3  ADDR:    0  MEM_OUT:  102  ACC:  102  	 input  [0,3,',']
+DEBUG   input: 'o'
+DEBUG   TICK:   8  PC:    4  ADDR:    0  MEM_OUT:  111  ACC:  102  	 jmp  [0,4,']']
+DEBUG   TICK:   9  PC:    1  ADDR:    0  MEM_OUT:  111  ACC:  102  	 jz  [0,1,'[']
+DEBUG   TICK:   11  PC:    2  ADDR:    0  MEM_OUT:  111  ACC:  111  	 print  [0,2,'.']
+DEBUG   output: 'f' << 'o'
+DEBUG   TICK:   13  PC:    3  ADDR:    0  MEM_OUT:  111  ACC:  111  	 input  [0,3,',']
+DEBUG   input: 'o'
+DEBUG   TICK:   15  PC:    4  ADDR:    0  MEM_OUT:  111  ACC:  111  	 jmp  [0,4,']']
+DEBUG   TICK:   16  PC:    1  ADDR:    0  MEM_OUT:  111  ACC:  111  	 jz  [0,1,'[']
+DEBUG   TICK:   18  PC:    2  ADDR:    0  MEM_OUT:  111  ACC:  111  	 print  [0,2,'.']
+DEBUG   output: 'fo' << 'o'
+DEBUG   TICK:   20  PC:    3  ADDR:    0  MEM_OUT:  111  ACC:  111  	 input  [0,3,',']
+WARNING   Input buffer is empty!
+INFO   output-buffer 'foo'
